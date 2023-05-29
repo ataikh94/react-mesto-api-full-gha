@@ -23,11 +23,8 @@ app.use(cors());
 app.use(helmet());
 
 app.use(requestLogger);
-
 app.use(router);
-
 app.use(errorLogger);
-
 router.use(errors());
 
 router.use((err, req, res, next) => {
