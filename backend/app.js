@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,8 +11,6 @@ const { requestLogger, errorLogger } = require('./middlewares/loggers');
 
 const app = express();
 
-require('dotenv').config();
-
 const { PORT = 3000 } = process.env;
 
 mongoose.connect('mongodb://127.0.0.1/mestodb', {
@@ -20,7 +19,6 @@ mongoose.connect('mongodb://127.0.0.1/mestodb', {
 
 app.use(bodyParser.json());
 app.use(cookieParser());
-
 app.use(cors());
 app.use(helmet());
 
