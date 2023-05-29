@@ -15,7 +15,7 @@ const app = express();
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1/mestodb' } = process.env;
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 50,
+  max: 100,
 });
 
 mongoose.connect(DB_URL, {
