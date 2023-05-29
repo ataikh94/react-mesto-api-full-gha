@@ -49,7 +49,8 @@ function App() {
   }, [])
 
   React.useEffect(() => {
-    Promise.all([api.getUserInfo(), api.getCards()]
+   if (loggedIn) {
+     Promise.all([api.getUserInfo(), api.getCards()]
       )
       .then((res) => {
         const [userData, cards] = res;
@@ -57,6 +58,7 @@ function App() {
         setCards(cards);
       })
       .catch(err => console.log(err));
+    };
   }, [loggedIn]);
 
   function handleEditProfileClick() {
@@ -139,7 +141,12 @@ function App() {
           return;
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setInfoTooltipText('Что-то пошло не так! Попробуйте ещё раз.')
+        setInfoTooltipImage(FailResult);
+        setIsInfoTooltipOpen(true);
+      });
   }
 
   function signOut() {
@@ -155,15 +162,15 @@ function App() {
       .then((res) => {
         setInfoTooltipText('Вы успешно зарегистрировались!');
         setInfoTooltipImage(SuccessResult);
-        if (!res) {
-          setInfoTooltipText('Что-то пошло не так! Попробуйте ещё раз.')
-          setInfoTooltipImage(FailResult);
-        }
         setIsInfoTooltipOpen(true);
         setEmail(res.email);
         navigate('/sign-in', { replace: true });
       })
-      .catch(err => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setInfoTooltipText('Что-то пошло не так! Попробуйте ещё раз.')
+        setInfoTooltipImage(FailResult);
+      });
   }
 
   return (

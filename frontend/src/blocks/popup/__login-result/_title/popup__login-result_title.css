@@ -1,11 +1,12 @@
 .popup__login-result_title {
     text-align: center;
-    margin: 32px auto 60px;
+    margin: 32px 30px 60px;
+    padding: 0;
 }
 
 @media screen and (max-width: 450px ) {
     .popup__login-result_title {
-        margin: 40px auto 50px;
+        margin: 40px 30px 50px;
         padding: 0;
         font-size: 20px;
         line-height: 24px;

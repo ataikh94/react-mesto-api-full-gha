@@ -1,5 +1,12 @@
 import { authBaseUrl } from "./constants";
 
+function getResponse(res) {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Ошибка ${res.status}`);
+};
+
 export const register = (email, password) => {
   return fetch(`${authBaseUrl}/signup`, {
     method: 'POST',
@@ -8,11 +15,7 @@ export const register = (email, password) => {
     },
     body: JSON.stringify({ email, password })
   })
-    .then((response) => {
-      if (response.status === 200 || response.status === 201) {
-        return response.json();
-      }
-    })
+    .then(getResponse);
 };
 
 export const authorize = (email, password) => {
@@ -23,10 +26,10 @@ export const authorize = (email, password) => {
     },
     body: JSON.stringify({ email, password })
   })
-    .then((response => response.json()))
-     .then((data) => {
-        localStorage.setItem('jwt', data.token);
-        return data;
+    .then(getResponse)
+    .then((data) => {
+      localStorage.setItem('jwt', data.token);
+      return data;
     })
 };
 
@@ -38,6 +41,5 @@ export const checkToken = (token) => {
       'Authorization': `Bearer ${token}`
     }
   })
-    .then(res => res.json())
-    .then(data => data)
+    .then(getResponse);
 }
