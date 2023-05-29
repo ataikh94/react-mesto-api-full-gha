@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const cors = require('cors');
 const router = require('./routes');
-const { requestLogger, errorLogger } = require('./middlewares/loggers');
+const { requestLogger } = require('./middlewares/loggers');
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(helmet());
 
 app.use(requestLogger);
 app.use(router);
-app.use(errorLogger);
+
 router.use(errors());
 
 router.use((err, req, res, next) => {
