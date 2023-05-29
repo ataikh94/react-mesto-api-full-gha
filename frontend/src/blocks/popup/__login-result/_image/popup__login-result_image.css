@@ -1,0 +1,11 @@
+.popup__login-result_image {
+    width: 120px;
+    margin: 60px auto 0;
+    display: block;
+}
+
+@media screen and (max-width: 450px) {
+    .popup__login-result_image {
+        margin: 50px auto 0;
+    }
+}

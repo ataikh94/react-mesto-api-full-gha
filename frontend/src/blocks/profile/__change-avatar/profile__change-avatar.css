@@ -1,0 +1,44 @@
+.profile__change-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .profile__change-avatar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .2s ease;
+  }
+  
+   .profile__change-avatar:hover::before {
+    opacity: .8;
+  } 
+  
+   .profile__change-avatar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('./../../../images/pencil.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity .2s ease;
+  }
+  
+  .profile__change-avatar:hover::after {
+    opacity: .8;
+  } 

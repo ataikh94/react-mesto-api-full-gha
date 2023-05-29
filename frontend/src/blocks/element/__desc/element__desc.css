@@ -1,0 +1,13 @@
+.element__desc {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #000;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 218px;
+    align-self: center;
+}

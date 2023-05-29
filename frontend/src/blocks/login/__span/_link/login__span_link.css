@@ -1,0 +1,9 @@
+.login__span_link {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.login__span_link:hover {
+    opacity: .8;
+}

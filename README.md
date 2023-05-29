@@ -5,12 +5,11 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP  158.160.33.47
+Frontend  https://ataikh.mesto.nomoredomains.rocks
+Backend  https://api.ataikh.mesto.nomoredomains.rocks
 
-Frontend https://...
-
-Backend https://...
+Ссылка на репозиторий GH: https://github.com/ataikh94/react-mesto-api-full-gha

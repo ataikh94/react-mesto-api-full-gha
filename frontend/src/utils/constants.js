@@ -1,0 +1,1 @@
+export const authBaseUrl = 'https://api.ataikh.mesto.nomoredomains.rocks';
